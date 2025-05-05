@@ -1,0 +1,722 @@
+$screen-xs: 320px;
+$screen-md: 768px;
+$screen-xl: 1366px;
+$fone_color: rgba(248, 248, 248, 1);
+$fone_color-opacity: rgba(248, 248, 248, 0.0001);
+$text_color: rgba(126, 126, 130, 1);
+/* ДОБАВИТЬ НЕСКОЛЬКИМ ТЕКСТАМ ЭТУ ПЕРЕМЕННУЮ*/
+$text_color-above: rgba(255, 255, 255, 1);
+$text_color-above-opacity: rgba(255, 255, 255, 0.5);
+$line_color: rgba(234, 234, 234, 1);
+$color_btn: rgba(255, 62, 121, 1);
+$color_item: rgb(65, 246, 215);
+$border_color: rgb(217, 255, 245);
+$fone_color-modal: rgba(255, 255, 255, 0.97);
+$shadow: rgb(230, 229, 229);
+$black_color: black;
+
+body {
+  margin: 0;
+  background-color: $fone_color;
+}
+.view {
+  display: block !important; // important не желательно!
+}
+.start-section {
+  @media (min-width: $screen-xl) {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    width: 1024px;
+  }
+}
+.secret-section {
+  @media (min-width: $screen-xl) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 1px;
+  }
+}
+.swiper2 {
+  margin-bottom: 20px;
+  font-family: 'Lakes';
+}
+.swiper-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper2 .windows-btn-two {
+  @media (min-width: $screen-xl) {
+    margin-left: 315px;
+  }
+}
+.swiper2 .swiper {
+  min-width: $screen-xs;
+  border-top: 1px solid $border_color;
+  margin-bottom: 1em;
+  height: 310px;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
+  @media (min-width: $screen-xl) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.swiper2 .swiper-wrapper {
+  @media (min-width: $screen-md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media (min-width: $screen-xl) {
+    max-width: 1366px;
+    min-width: 1024px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+// здесь надо оставить показ трех элементов,остальные скрыть,и показывать при нажатиий кнопки "показать всё"
+.swiper2 .swiper-slide {
+  width: 240px;
+  height: 160px;
+
+  @media (min-width: $screen-md) {
+    width: 224px;
+    height: 160px;
+  }
+}
+
+/*и3 первого свайпера*/
+.swiper2 .swiper-slide_parametr {
+  border: 1px solid $line_color;
+  border-radius: 5px;
+  background-color: $text_color-above;
+}
+
+.swiper2 .swiper-slide__btn {
+  background-image: url('../img/go.svg');
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin-top: 50px;
+  margin-left: 170px;
+  left: 150px;
+}
+/*ЗДЕСЬ У НАС НАСТРОЙКИ ДЛЯ СКРЫТИЯ ЭЛЕМЕНТОВ СВАЙПЕРА 2,Т.Е. SWIPER__HIDE*/
+.swiper__hide {
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}
+
+.swiper__hide:nth-last-child(-n + 1) {
+  @media (min-width: $screen-xl) {
+    display: block;
+  }
+}
+
+.swiper__hide_init {
+  display: flex;
+  flex-wrap: wrap;
+}
+.swiper-slide__name {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  text-decoration: none;
+  color: $black_color;
+}
+
+.swiper-slide__category {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.swiper-headline {
+  display: none;
+
+  @media (min-width: $screen-md) {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 100%;
+  }
+}
+.swiper3 {
+  margin-bottom: 20px;
+}
+.swiper3 .swiper {
+  height: 350px;
+  min-width: $screen-xs;
+  border-top: 1px solid $border_color;
+  background: $fone_color;
+
+  @media (min-width: $screen-md) {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $screen-xl) {
+    height: 100%;
+  }
+}
+
+.swiper3 .swiper-wrapper {
+  font-family: 'TT Lakes';
+  @media (min-width: $screen-md) {
+    max-width: 769px;
+  }
+  @media (min-width: $screen-xl) {
+    max-width: 950px;
+  }
+}
+
+.swiper3 .swiper::before {
+  content: '';
+  position: absolute;
+  top: 90px;
+  right: 0px;
+  width: 24px;
+  height: 200px;
+  background: linear-gradient(90deg, $fone_color-opacity, $fone_color);
+  z-index: 5;
+
+  @media (min-width: $screen-md) {
+    height: 0px;
+  }
+}
+
+.swiper3 .swiper-slide {
+  width: 260px;
+  height: 200px;
+  background-color: $text_color-above;
+  border-radius: 10px;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 0;
+    border-radius: 0px;
+  }
+}
+
+.swiper3 .swiper-slide::after {
+  height: 0px;
+
+  @media (min-width: $screen-md) {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: 15px;
+    width: 97%;
+    height: 1px;
+    background-color: $line_color;
+  }
+}
+
+.swiper3 .swiper-slide:last-child::after {
+  height: 0px;
+}
+
+.swiper3 .swiper-wrapper .swiper-slide:first-child {
+  @media (min-width: $screen-md) {
+    border-radius: 10px 10px 0 0;
+  }
+}
+.swiper3 .swiper-wrapper .swiper-slide:last-child {
+  @media (min-width: $screen-md) {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+.swiper-headline {
+  color: $text_color;
+}
+
+.swiper-slide__envelope {
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-left: 15px;
+
+  @media (min-width: $screen-md) {
+    display: flex;
+  }
+}
+
+.swiper-headline__repair {
+  margin-right: 200px;
+
+  @media (min-width: $screen-xl) {
+    margin-right: 310px;
+  }
+}
+.swiper-headline__price {
+  margin-right: 136px;
+
+  @media (min-width: $screen-xl) {
+    margin-right: 165px;
+  }
+}
+.swiper-slide__repair {
+  margin: 15px 0 5px 0;
+  color: $text_color;
+  background-color: $text_color-above;
+
+  @media (min-width: $screen-md) {
+    display: none;
+    margin: 15px 0 0 0;
+  }
+}
+
+.swiper-slide__repair-service {
+  margin: 5px 0 15px 0;
+
+  @media (min-width: $screen-md) {
+    width: 320px;
+    margin: 15px 0 0 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 430px;
+  }
+}
+
+.swiper-slide__price {
+  margin: 0 0 5px 0;
+  color: $text_color;
+  background-color: $text_color-above;
+
+  @media (min-width: $screen-md) {
+    display: none;
+  }
+}
+
+.swiper-slide__price-service {
+  margin: 0 0 15px 0;
+
+  @media (min-width: $screen-md) {
+    width: 170px;
+    margin: 15px 0 0 0;
+  }
+  @media (min-width: $screen-xl) {
+    width: 200px;
+  }
+}
+
+.swiper-slide__time {
+  margin: 0 0 5px 0;
+
+  color: $text_color;
+  background-color: $text_color-above;
+
+  @media (min-width: $screen-md) {
+    display: none;
+    margin-top: 10px;
+  }
+}
+
+.swiper-slide__time-service {
+  margin: 0 0 15px 0;
+
+  @media (min-width: $screen-md) {
+    margin-top: 10px;
+  }
+}
+
+.swiper3 .swiper__take {
+  background-color: $color_btn;
+  width: 120px;
+  height: 30px;
+  border: none;
+  border-radius: 20px;
+  color: $text_color-above;
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  margin-right: 1em;
+}
+.swiper__take-goside {
+  background-image: url('../img/goside.svg');
+  height: 40px;
+  width: 40px;
+  z-index: 1;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 90px;
+}
+.swiper__take-btn {
+  margin-left: -25px;
+  font-family: 'TT Lakes Demi';
+}
+.price-info {
+  font-family: 'TT Lakes';
+  margin-left: 2em;
+  width: 90%;
+
+  @media (min-width: $screen-md) {
+    width: 60%;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 40%;
+    margin-left: 320px;
+  }
+}
+
+.offer {
+  font-family: 'Lakes';
+  margin-left: 2em;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: $screen-xl) {
+    margin-left: 320px;
+  }
+
+  &_style {
+    text-decoration: none;
+    color: $black_color;
+  }
+}
+
+.offer__item {
+  background-image: url('../img/more.svg');
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.useful {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+  }
+
+  @media (min-width: $screen-xl) {
+    margin-left: 320px;
+  }
+  &_style {
+    font-family: 'TT Lakes';
+    color: $text_color;
+  }
+  &__info:nth-child(1) {
+    width: 218px;
+
+    @media (min-width: $screen-md) {
+      width: 213px;
+      text-align: left;
+    }
+  }
+
+  &__info:nth-child(2) {
+    @media (min-width: $screen-md) {
+      width: 250px;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__info:nth-child(3) {
+    width: 312px;
+
+    @media (min-width: $screen-md) {
+      width: 213px;
+      text-align: right;
+      margin-right: 2em;
+      height: 32px;
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 330px;
+      height: 32px;
+    }
+  }
+}
+
+.modal-feed {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: $fone_color-modal;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: -10px;
+
+  @media (min-width: $screen-xl) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.modal-feedback {
+  display: block;
+  height: 1000px;
+  width: 320px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  &_style {
+    background-color: $text_color-above;
+    box-shadow: -20px 0 50px $shadow;
+    border-left: 1px solid $border_color;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-left: auto;
+    height: 1000px;
+    width: 400px;
+    padding-bottom: 20px;
+    padding-left: 25px;
+
+    &_style {
+      border-left: 1px solid $border_color;
+    }
+  }
+
+  &__close {
+    background-image: url('../img/burger_close.svg');
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+
+    @media (min-width: $screen-md) {
+      position: relative;
+      left: -85px;
+    }
+  }
+}
+
+.modal-feedback-title {
+  margin-top: -15px;
+
+  @media (min-width: $screen-md) {
+    margin-top: -65px;
+  }
+}
+.modal-feedback-title::before {
+  display: block;
+  width: 4px;
+  height: 40px;
+  position: relative;
+  content: '';
+  top: 30px;
+  left: -26px;
+  background-color: $color_item;
+  z-index: 5;
+}
+
+.name {
+  width: 270px;
+  height: 48px;
+  text-indent: 5px;
+  margin-bottom: 10px;
+
+  &_style {
+    border-radius: 5px;
+    border: solid 1px $line_color;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 376px;
+  }
+}
+
+.phone {
+  width: 270px;
+  height: 48px;
+  margin-bottom: 10px;
+
+  &_style {
+    border-radius: 5px;
+    border: solid 1px $line_color;
+    text-indent: 5px;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 376px;
+  }
+}
+
+.mail {
+  width: 270px;
+  height: 48px;
+  margin-bottom: 10px;
+
+  &_style {
+    border-radius: 5px;
+    border: solid 1px $line_color;
+    text-indent: 5px;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 376px;
+  }
+}
+
+.word {
+  width: 270px;
+  height: 118px;
+  margin-bottom: 10px;
+
+  &_style {
+    border-radius: 5px;
+    border: solid 1px $line_color;
+    text-indent: 5px;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 376px;
+  }
+}
+
+.btn-send {
+  width: 120px;
+  height: 30px;
+  padding-top: 6px;
+  margin-left: 170px;
+
+  @media (min-width: $screen-md) {
+    margin-left: 260px;
+  }
+
+  &_style {
+    background-color: $color_btn;
+    border: none;
+    border-radius: 20px;
+    color: $text_color-above;
+  }
+}
+
+.modal-connect {
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: $fone_color-modal;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: -10px;
+
+  @media (min-width: $screen-xl) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.modal-connection {
+  display: block;
+  height: 1000px;
+  width: 320px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  &_style {
+    background-color: $text_color-above;
+    box-shadow: -20px 0 50px shadow;
+  }
+
+  @media (min-width: $screen-md) {
+    margin-left: auto;
+    height: 1000px;
+    width: 400px;
+    border-left: 1px solid $border_color;
+    padding-bottom: 20px;
+    padding-left: 25px;
+  }
+
+  &__close {
+    background-image: url('../img/burger_close.svg');
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+
+    @media (min-width: $screen-md) {
+      position: relative;
+      left: -85px;
+      z-index: 2;
+    }
+  }
+}
+
+.modal-connection-title {
+  margin-top: -20px;
+
+  @media (min-width: $screen-md) {
+    margin-top: -65px;
+  }
+}
+
+.modal-connection-title::before {
+  display: block;
+  width: 4px;
+  height: 40px;
+  position: relative;
+  content: '';
+  top: 30px;
+  left: -25px;
+  background-color: $color_item;
+}
+
+.modal-connection-phone {
+  width: 288px;
+  height: 48px;
+
+  &_style {
+    border-radius: 5px;
+    border: solid 1px $line_color;
+    text-indent: 5px;
+  }
+
+  @media (min-width: $screen-md) {
+    width: 376px;
+  }
+}
+
+.highlight {
+  color: $color_btn;
+}
+.btn__goside {
+  background-image: url('../img/goside.svg');
+  height: 40px;
+  width: 40px;
+  z-index: 1;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  position: relative;
+  right: -90px;
+  top: -18px;
+}
