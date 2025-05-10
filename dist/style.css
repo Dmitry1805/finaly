@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(/node_modules/swiper/modules/pagination.css);
 @import url(/node_modules/swiper/modules/navigation.css);
 @import url(/node_modules/swiper/swiper-bundle.css);
@@ -967,7 +968,7 @@
   }
 }
 
-@charset "UTF-8";
+
 /* ДОБАВИТЬ НЕСКОЛЬКИМ ТЕКСТАМ ЭТУ ПЕРЕМЕННУЮ*/
 body {
   margin: 0;
